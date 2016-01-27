@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Oracle - @oracle-edu.ec-lille.fr" uuid="29961459-94d5-4b9c-83a8-c379182fcbbf">
+      <secret-storage>memory</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>EBM18</user-name>
+    </data-source>
+  </component>
+</project>

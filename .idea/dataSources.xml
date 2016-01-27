@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1118365180">
+    <data-source source="LOCAL" name="Oracle - @oracle-edu.ec-lille.fr" uuid="29961459-94d5-4b9c-83a8-c379182fcbbf">
+      <driver-ref>oracle</driver-ref>
+      <configured-by-url>true</configured-by-url>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.driver.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@//oracle-edu.ec-lille.fr:1521/ecli4</jdbc-url>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Login</title>
+</h:head>
+<h:body>
+    <f:view>
+        <h3><h:outputText value="Ajouter Policier"/></h3>
+        <h:form id="formPolicier">
+            <h:outputLabel value="Nom"/>
+            <h:inputText id="nom" value="#{controlBean.policier.nom}" />
+            <h:outputLabel value="Prénom"/>
+            <h:inputText id="prenom" value="#{controlBean.policier.prenom}" />
+            <h:outputLabel value="Grade"/>
+            <h:inputText id="grade" value="#{controlBean.policier.grade}" />
+            <h:commandButton value="Add" action="#{controlBean.doCreatePolicier}"/>
+        </h:form>
+        <h1><h:outputText value="Liste des policiers"/></h1>
+        <h:form id="formListePoliciers">
+            <h:dataTable value="#{controlBean.policiers}" var="policier"
+                         styleClass="policierTable"
+                         headerClass="policierTableHeader"
+                         rowClasses="policierTableOddRow,policierTableEvenRow">
+                <h:column>
+                    <f:facet name="header">Nom</f:facet>
+                    #{policier.nom}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Prénom</f:facet>
+                    #{policier.prenom}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Grade</f:facet>
+                    #{policier.grade}
+                </h:column>
+            </h:dataTable>
+
+        </h:form>
+        <h3><h:outputText value="Ajouter Gangster"/></h3>
+        <h:form id="formGangster">
+            <h:outputLabel value="Nom"/>
+            <h:inputText id="gang_nom" value="#{controlBean.gangster.gname}" />
+            <h:outputLabel value="Surnom"/>
+            <h:inputText id="gang_surnom" value="#{controlBean.gangster.nickname}" />
+            <h:outputLabel value="Nombre de mauvais coup"/>
+            <h:inputText id="gang_score" value="#{controlBean.gangster.badness}" />
+            <h:commandButton value="Add" action="#{controlBean.doCreateGangster}"/>
+        </h:form>
+        <h3><h:outputText value="Ajouter Organisation"/></h3>
+        <h:form id="formOrganisation">
+            <h:outputLabel value="Nom"/>
+            <h:inputText id="org_nom" value="#{controlBean.organisation.org_name}" />
+            <h:outputLabel value="Description"/>
+            <h:inputText id="org_description" value="#{controlBean.organisation.description}" />
+            <h:commandButton value="Add" action="#{controlBean.doCreateOrganisation}"/>
+        </h:form>
+        <h3><h:outputText value="Ajouter Job"/></h3>
+        <h:form id="formJob">
+            <h:outputLabel value="Nom du job"/>
+            <h:inputText id="job_nom" value="#{controlBean.job.job_name}" />
+            <h:outputLabel value="Rapport"/>
+            <h:inputText id="job_rapport" value="#{controlBean.job.score}" />
+            <h:outputLabel value="Mise de fond"/>
+            <h:inputText id="job_setup_cost" value="#{controlBean.job.setup_cost}" />
+            <h:commandButton value="Add" action="#{controlBean.doCreateJob}"/>
+        </h:form>
+        <h3><h:outputText value="Supprimer Organisation"/></h3>
+        <h:form id="formSupOrganisation">
+            <h:outputLabel value="Nom"/>
+            <h:inputText id="org_nom_supp" value="#{controlBean.organisation.org_name}" />
+            <h:commandButton value="Add" action="#{controlBean.doDeleteOrganisation}"/>
+        </h:form>
+        <h3><h:outputText value="Supprimer Gangster"/></h3>
+        <h:form id="formSupGangster">
+            <h:outputLabel value="Nom"/>
+            <h:inputText id="gang_nom_supp" value="#{controlBean.gangster.gname}" />
+            <h:commandButton value="Add" action="#{controlBean.doDeleteGangster}"/>
+        </h:form>
+        <h3><h:outputText value="Affecter un gangster à une organisation"/></h3>
+        <h:form id="formAffectOrganisation">
+            <h:outputLabel value="Nom gangster"/>
+            <h:inputText id="affect_org_gang_nom" value="#{controlBean.affect_org_gang_nom}" />
+            <h:outputLabel value="Nom organisation"/>
+            <h:inputText id="affect_org_org_nom" value="#{controlBean.affect_org_org_nom}" />
+            <h:commandButton value="Add" action="#{controlBean.doAffectOrganisation}"/>
+        </h:form>
+        <h3><h:outputText value="Dissocier un gangster d'une organisation"/></h3>
+        <h:form id="formDissOrganisation">
+            <h:outputLabel value="Nom gangster"/>
+            <h:inputText id="diss_org_gang_nom" value="#{controlBean.diss_org_gang_nom}" />
+            <h:outputLabel value="Nom organisation"/>
+            <h:inputText id="diss_org_org_nom" value="#{controlBean.diss_org_org_nom}" />
+            <h:commandButton value="Add" action="#{controlBean.doDissOrganisation}"/>
+        </h:form>
+        <h3><h:outputText value="Affecter un gangster à un job"/></h3>
+        <h:form id="formAffectJob">
+            <h:outputLabel value="Nom gangster"/>
+            <h:inputText id="affect_job_gang_nom" value="#{controlBean.affect_job_gang_nom}" />
+            <h:outputLabel value="Nom Job"/>
+            <h:inputText id="affect_job_job_nom" value="#{controlBean.affect_job_job_nom}" />
+            <h:outputLabel value="Salaire"/>
+            <h:inputText id="affect_job_salaire" value="#{controlBean.affect_job_salaire}" />
+            <h:commandButton value="Add" action="#{controlBean.doAffectJob}"/>
+        </h:form>
+        <h3><h:outputText value="Affecter un chef à une organisation"/></h3>
+        <h:form id="formAffectChefOrganisation">
+            <h:outputLabel value="Nom chef"/>
+            <h:inputText id="affect_org_chef_nom" value="#{controlBean.affect_org_chef_nom}" />
+            <h:outputLabel value="Nom organisation"/>
+            <h:inputText id="affect_org_nom" value="#{controlBean.affect_org_nom}" />
+            <h:commandButton value="Add" action="#{controlBean.doAffectChefOrganisation}"/>
+        </h:form>
+    </f:view>
+</h:body>
+</html>

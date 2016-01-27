@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="CRIMEPU" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>OracleDatasource</jta-data-source>
+        <class>os.junk.crime.models.Affectation</class>
+        <class>os.junk.crime.models.Gangster</class>
+        <class>os.junk.crime.models.Job</class>
+        <class>os.junk.crime.models.Organisation</class>
+        <class>os.junk.crime.models.Policier</class>
+        <properties>
+            <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.oracle.OraclePlatform" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@oracle-edu.ec-lille.fr:1521:ecli4"/>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="javax.persistence.jdbc.user" value="EBM18"/>
+            <property name="javax.persistence.jdbc.password" value="SQL4ever"/>
+            <property name="javax.persistence.schema-generation.database.action" value="create"/>
+            <property name="eclipselink.logging.level" value="FINE"/>
+        </properties>
+    </persistence-unit>
+</persistence>
